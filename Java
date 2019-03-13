@@ -168,3 +168,121 @@ public class Homework {
 	}
 
 }
+
+03.13.2019
+
+/*-----------------------------------------------------------------
+  1. Klavyeden bir n sayisi okuyunuz ve asagidaki deseni olusturan
+  programi yaziniz (ornegimizde n = 6):
+       *
+      ***
+     *****
+    *******
+   *********
+  ***********
+   *********
+    *******
+     *****
+      ***
+       *
+-----------------------------------------------------------------*/
+
+package deneme;
+
+public class Homework {
+
+	public static void main(String[] args) 
+	{
+		int a;
+		
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz");
+		a = Integer.parseInt(kb.nextLine());
+		
+		print(a);
+	}
+	
+	public static void print(int a) 
+	{
+		int goal = 2 * a - 1;
+		int space = a - 1;
+		int symbol = 1;
+		
+		for (int i = 0; i < goal; i++) 
+		{
+			if (i < a) 
+			{
+				for (int k = space; k > 0; k--)
+					System.out.print(" ");
+				space--;
+			} else
+			{
+				space++;
+				for (int k = 0; k <= space; k++)
+					System.out.print(" ");
+			}
+			
+			if (i < a) {
+				for (int x = 0; x < symbol; x++)
+					System.out.print("*");
+				symbol += 2;
+			} else
+			{
+				symbol -= 2;
+				for (int x = symbol - 2; x > 0; x--) //Burada bekledigim davranisi yakalayamadim ve kucuk bir hile yaptim
+					System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+	}
+}
+
+/*-----------------------------------------------------------------
+  2. Parametresi ile aldigi long turden saniye cinsinden sureyi saat,
+  dakika ve saniye olarak ayristirarak ekrana yazdiran displayDuration
+  isimli metodu yaziniz. Eger saat, dakika ya da saniye degeri 0 ise
+  ekrana yazdirilmayacak.
+-----------------------------------------------------------------*/
+
+package deneme;
+
+public class Homework {
+
+	public static void main(String[] args) 
+	{
+		long duration;
+		
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz");
+		duration = Long.parseLong(kb.nextLine());
+		
+		displayDuration(duration);
+	}
+	
+	public static void displayDuration (long a) 
+	{
+		long saniye = a;
+		long dakika = 0;
+		long saat = 0;
+		
+		if (saniye / 60 > 0) 
+		{
+			dakika = saniye / 60;
+			saniye = saniye % 60;
+			
+			if (dakika / 60 > 0) 
+			{
+				saat = dakika / 60; 
+				dakika = dakika % 60;
+			}
+		}
+		
+		if (saat > 0)
+			System.out.print(saat + ":" + dakika + ":" + saniye); //printf ile nedense hata veriyor
+		else if (dakika > 0)
+			System.out.print(dakika + ":" + saniye);
+		else
+			System.out.print(saniye);
+	}
+}
