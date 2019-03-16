@@ -1,1 +1,401 @@
+02.17.2019
+
+1.
+/*
+  		Klavyeden alinan iki tane int türden sayinin toplamini, farkini ve çarpimini bulan programi yaziniz. 
+  		Formatli yazdirma yapmayiniz.
+*/
+
+package csd;
+
+class App {
+		public static void main(String [] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Birinci sayiyi giriniz");
+		int val1 = Integer.parseInt(kb.nextLine());
+		
+		System.out.println("Ikinci sayiyi giriniz");
+		int val2 = Integer.parseInt(kb.nextLine());
+		
+		int sum = val1 + val2;
+		int sub = val1 - val2;
+		int mul = val1 * val2;
+		
+		System.out.println("Toplam: " + sum + "Fark: " + sub + "Carpim: " + mul);
+	}
+	
+	
+}
+
+
+02.23.2019
+
+2. 
+/*
+		Parametresi ile aldigi x1, y1, x2, y2 double türden degerkeri için (x1, y1) ve (x2, y2) noktalari arasindaki uzakligi döndüren 
+		distance isimli metodu Util isimli sinifin içerisinde yaziniz ve metodu klavyeden girilen koordinat bilgileri ile çagirarak 
+		test ediniz.
+*/
+
+
+package csd;
+
+class App {
+	public static void main(String [] args) 
+	{
+		Program.run();
+	}
+}
+
+class Program{
+	public static void run() 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Birinci sayiyi giriniz");
+		double x1 = Double.parseDouble(kb.nextLine());
+		
+		System.out.println("Ikinci sayiyi gir");
+		double y1 = Double.parseDouble(kb.nextLine());
+		
+		System.out.println("Ucuncu sayi gir");
+		double x2 = Double.parseDouble(kb.nextLine());
+		
+		System.out.println("Dorduncu sayi gir");
+		double y2 = Double.parseDouble(kb.nextLine());
+		
+		double result = Util.distance(x1, y1, x2, y2);
+		
+		System.out.printf("dist((%.2f, %.2f), (%.2f, %.2f) = %f%n", x1,y1,x2,y2,result);
+	}
+}
+
+
+class Util{
+	public static double distance(double x1, double y1, double x2, double y2) 
+	{
+		return Math.sqrt((Math.pow((x1-x2), 2))+(Math.pow((y1-y2), 2)));
+	}
+}
+
+3.
+/*
+	Klavyeden girilen 3 basamakli bir sayinin basamaklari toplamini bulan programi yaziniz. Klavyeden 3 basamak
+	disinda giris kontrolü yapilmayacaktir.
+*/
+
+03.10.2019
+
+4.
+// katsayilari klavyeden girilen sayinin birinci ve ikinci katsayisini bul
+
+package csd;
+
+public class Pazar_03_10_2019 {
+	
+	public double a;
+	public double b;
+	public double c;
+	//public double x1;
+	//public double x2;
+	
+	public void main(String[] args) {
+		setVal();
+		delta();
+		calculate();
+
+	}
+	
+	public void setVal() {
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz");
+		a = Double.parseDouble(kb.nextLine());
+		System.out.println("Bir sayi giriniz");
+		b = Double.parseDouble(kb.nextLine());
+		System.out.println("Bir sayi giriniz");
+		c = Double.parseDouble(kb.nextLine());
+	}
+	
+	public double delta() {
+		return b * b - 4 * a * c;
+	} 
+	
+	public void calculate() {
+		//Scope daraltma islemi
+		double x1;
+		double x2;
+		
+		double sqrtDelta = Math.sqrt(delta()); //optimizasyon
+		
+		if (delta() > 0) {
+			x1 = (-b + sqrtDelta/*Math.sqrt(delta())*/) / (2 * a);
+			x2 = (-b - sqrtDelta/*Math.sqrt(delta())*/) / (2 * a);
+		} else if (delta() == 0) {
+			x1 = x2 = -b / (2 * a);
+			System.out.println("x1 = " + x1 + "x2 = " + x2);
+		}
+		else
+			System.out.println("Gercek deger yok");
+		
+	}
+
+}
+
+5.
+
+// Parametresi ile aldigi int turden bir sayisinin tersini sonduren
+// getReverse isimli metodu yaziniz ve test ediniz.
+
+package csd;
+
+public class Pazar_03_10_2019 {
+	public void main(String[] args) 
+	{
+		getValue();
+		
+		System.out.println(getReverse(getValue()));
+	}
+	
+	public int getValue() 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.println("Bir sayi gir");
+		int val = Integer.parseInt(kb.nextLine());
+		return val;
+	}
+	
+	public int getReverse (int val) 
+	{
+		int result = 0;
+		
+		while(val != 0) 
+		{
+			result = result * 10 + val % 10;
+			val /= 10;
+		}
+		
+		return result;
+	}
+}
+
+6.
+
+// Parametresi ile aldigi int turden bir sayinin tersinin kendisine esit olup olmadigini donduren
+// isPalindrome isimli metodu yaziniz ve test ediniz.
+
+package csd;
+
+public class Pazar_03_10_2019 {
+	public void main(String[] args) 
+	{
+		getValue();
+		
+		System.out.println(isPalindrome(getValue(),getReverse(getValue())));
+	}
+	
+	public int getValue() 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.println("Bir sayi gir");
+		int val = Integer.parseInt(kb.nextLine());
+		return val;
+	}
+	
+	public int getReverse (int val) 
+	{
+		int result = 0;
+		
+		while(val != 0) 
+		{
+			result = result * 10 + val % 10;
+			val /= 10;
+		}
+		
+		return result;
+	}
+	
+	public boolean isPalindrome (int val, int result) 
+	{
+		return val == result;
+	}
+}
+
+7.
+
+// Klavyede sifir girilene kadar alinan sayilarin pozitif ve negatif olanlarinin ayri
+// sayisini bulan program yaziniz.
+
+package csd;
+
+public class Pazar_03_10_2019 {
+	public void main(String[] args) 
+	{
+		getValue();
+		
+		if (val > 0)
+			;
+		else if (val < 0)
+			count[1]++;
+		else
+		
+		System.out.println(isPalindrome(getValue(),getReverse(getValue())));
+	}
+	
+	public int getValue() 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.println("Bir sayi gir");
+		int val = Integer.parseInt(kb.nextLine());
+		return val;
+	}
+	
+	public int count (int val) 
+	{
+		
+	}
+}
+
+8.
+
+// Parametresi ile aldigi int turden 3 basamakli bir sayinin basamaklarinin kupleri toplaminin kendisine
+// esit olup olmadigini donduren isArmstrong3digits metodunu yaziniz. Metot sayi basamakli degil ise false dondurecektir.
+
+03.16.2019
+
+9.
+/*
+ * Parametresi ile aldigi a ve b degerleri icin a'nin b'inci kuvvetini donduren pow metodunu Math.pow
+ * kullanmadan yaiziniz. Klavyeden girilen degerlerle cagirarak test ediniz.
+ */
+
+package deneme;
+
+public class Cumartesi_03_16_2019 {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.println("Sirasi ile iki sayi giriniz!");
+		int a = Integer.parseInt(kb.nextLine());
+		int b = Integer.parseInt(kb.nextLine());
+		System.out.println(pow(a,b));
+	}
+	
+	public static int pow (int a, int b) 
+	{
+		int val = 1;
+		
+		if (b > 0)
+			for (int i = b; i != 0; i--)
+				val = val * a;
+		else if (b < 0)
+			for (int i = b; i != 0; i++)
+				val = val * (1/a);
+		
+		return val;
+	}
+
+}
+
+10.
+/*
+ * Sinif Calismasi: Parametresi ile aldigi int turden bir sayinin faktoriyelini donduren factorial isimli
+ * metodu yaziniz ve test ediniz.
+ * 
+ * 0 != 1
+ * 1 != 1
+ * 
+ * n! = 1*2...*n-1*n
+ */
+
+package deneme;
+
+public class Cumartesi_03_16_2019 {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.println("Sirasi ile iki sayi giriniz!");
+		int a = Integer.parseInt(kb.nextLine());
+		System.out.println(factorial(a));
+	}
+	
+	public static int factorial (int a) 
+	{
+		int val = 1;
+		
+		//a = 13 max
+		
+		if (a > 0)
+			for (int i = a; i != 1; --i)
+			{
+				val = val * i;
+			}
+		else if (a < 0)
+			return -1;
+		
+		return val;
+	}
+
+}
+
+11.
+/*
+ * Sinif Calismasi: Parametresi ile aldigi int turden bir sayinin Armstrong sayisi olup olmadigini test
+ * eden isArmstrong isimli metodu yaziniz ve test ediniz. Metot icerisinde daha once yazdigimiz pow
+ * metodunu kullaniniz.
+ * Negatif sayilar Armstrong sayisi olamaz.
+ *
+ * Tanim: Basamaklarinin basamaksayinci kuvvetleri toplami kendisine esit olan sayilara Armstrong
+ * sayilari denir.
+ */
+
+package deneme;
+
+public class Cumartesi_03_16_2019 {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		
+		System.out.println("Sirasi ile iki sayi giriniz!");
+		int a = Integer.parseInt(kb.nextLine());
+		int val = a;
+		int b = 0;
+		
+		while (val != 0)
+		{
+			val = val / 10;
+			b++;
+		}
+		
+		System.out.println(isArmstrong(pow(a,b), b));
+	}
+	
+	public static int pow (int a, int b) 
+	{
+		int val = 1;
+		
+		if (b > 0)
+			for (int i = b; i != 0; i--)
+				val = val * a;
+		
+		return val;
+	}
+	
+	public static boolean isArmstrong (int a, int b) 
+	{
+		for (;;)
+			for (;;)
+		
+		return true;
+		
+	}
+
+}
 
