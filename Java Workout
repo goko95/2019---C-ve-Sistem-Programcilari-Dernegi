@@ -6,6 +6,38 @@
   		Formatli yazdirma yapmayiniz.
 */
 
+!!!Teacher's Note!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Birinci sayıyı giriniz");
+		int number1 = Integer.parseInt(kb.nextLine());
+		
+		System.out.println("İkinci sayıyı giriniz");
+		int number2 = Integer.parseInt(kb.nextLine());
+		
+		int result;
+		
+		result = number1 + number2;
+		
+		System.out.println(result);
+		
+		result = number1 - number2;
+		
+		System.out.println(result);
+		
+		result = number1 * number2;
+		
+		System.out.println(result);		
+	}
+}
+
+!!!My Code!!!
+
 package csd;
 
 class App {
@@ -38,6 +70,47 @@ class App {
 		test ediniz.
 */
 
+!!!Tracher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Program.run();		
+	}
+}
+
+class Program {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);	
+		System.out.print("x1 i giriniz:");
+		double x1 = Double.parseDouble(kb.nextLine());				
+		
+		System.out.print("y1 i giriniz:");
+		double y1 = Double.parseDouble(kb.nextLine());				
+		
+		System.out.print("x2 i giriniz:");
+		double x2 = Double.parseDouble(kb.nextLine());				
+		
+		System.out.print("y2 i giriniz:");
+		double y2 = Double.parseDouble(kb.nextLine());	
+		
+		double result = Util.distance(x1, y1, x2, y2);
+		
+		System.out.printf("dist((%.2f, %.2f), (%.2f, %.2f)) = %f%n", x1, y1, x2, y2, result);
+	}
+}
+
+class Util {
+	public static double distance(double x1, double y1, double x2, double y2)
+	{
+		return Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));		
+	}
+}
+
+!!!My Code!!!
 
 package csd;
 
@@ -47,6 +120,7 @@ class App {
 		Program.run();
 	}
 }
+
 
 class Program{
 	public static void run() 
@@ -87,7 +161,53 @@ class Util{
 03.10.2019
 
 4.
-// katsayilari klavyeden girilen sayinin birinci ve ikinci katsayisini bul
+// Katsayıları klavyeden girilen ikinci dereceden denklemin köklerini bulan programı yazınız
+
+!!!Teacher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("a?");
+		double a = Double.parseDouble(kb.nextLine());		
+		
+		System.out.print("b?");
+		double b = Double.parseDouble(kb.nextLine());
+		
+		System.out.print("c?");
+		double c = Double.parseDouble(kb.nextLine());
+		
+		Util.findRoots(a, b, c);
+    }	
+}
+
+class Util {	
+	public static void findRoots(double a, double b, double c)
+	{
+		double delta = b * b - 4 * a * c;
+		
+		if (delta > 0) {
+			double sqrtDelta = Math.sqrt(delta);
+			double x1 = (-b + sqrtDelta) / (2 * a);
+			double x2 = (-b - sqrtDelta) / (2 * a);
+			
+			System.out.printf("x1=%f,x2=%f%n", x1, x2);
+		}
+		else if (delta == 0) {
+			double x = -b / (2 * a);
+			
+			System.out.printf("x1=x2=%f%n", x);
+		}
+		else 
+			System.out.println("Gerçek kök yok");			
+	}
+	
+}
+
+!!!My Code!!!
 
 package csd;
 
@@ -142,9 +262,41 @@ public class Pazar_03_10_2019 {
 }
 
 5.
-
 // Parametresi ile aldigi int turden bir sayisinin tersini sonduren
 // getReverse isimli metodu yaziniz ve test ediniz.
+
+!!!Teacher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayı giriniz");
+		int val = Integer.parseInt(kb.nextLine());
+		
+		int result = NumberUtil.getReverse(val);
+		
+		System.out.printf("%d sayısının tersi:%d%n", val, result);
+    }	
+}
+
+class NumberUtil {
+	public static int getReverse(int val)
+	{
+		int result = 0;
+		
+		while (val != 0) {
+			result = result * 10 + val % 10;
+			val /= 10;
+		}		
+		
+		return result;
+	}
+}
+
+!!!My Code!!!
 
 package csd;
 
@@ -180,9 +332,47 @@ public class Pazar_03_10_2019 {
 }
 
 6.
-
 // Parametresi ile aldigi int turden bir sayinin tersinin kendisine esit olup olmadigini donduren
 // isPalindrome isimli metodu yaziniz ve test ediniz.
+
+!!!Teacher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayı giriniz");
+		int val = Integer.parseInt(kb.nextLine());
+		
+		if (NumberUtil.isPalindrome(val))
+			System.out.printf("%d sayısı palindromdur%n", val);
+		else
+			System.out.printf("%d sayısı palindrom değildir%n", val);
+    }	
+}
+
+class NumberUtil {
+	public static boolean isPalindrome(int val)
+	{
+		return getReverse(val) == val;		
+	}
+	
+	public static int getReverse(int val)
+	{
+		int result = 0;
+		
+		while (val != 0) {
+			result = result * 10 + val % 10;
+			val /= 10;
+		}		
+		
+		return result;
+	}
+}
+
+!!!My Code!!!
 
 package csd;
 
@@ -223,9 +413,49 @@ public class Pazar_03_10_2019 {
 }
 
 7.
-
 // Klavyede sifir girilene kadar alinan sayilarin pozitif ve negatif olanlarinin ayri
 // sayisini bulan program yaziniz.
+
+!!!Teacher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		Application.run();
+    }	
+}
+
+class Application {
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Sayıları girmeye başlayınız");
+		
+		int posCount = 0, negCount = 0;
+		
+		int val;
+		
+		while ((val = Integer.parseInt(kb.nextLine())) != 0)
+			if (val > 0)
+				++posCount;
+			else
+				++negCount;
+		
+		if (posCount != 0)
+			System.out.printf("%d adet pozitif sayı girdiniz%n", posCount);
+		else
+			System.out.println("Hiç pozitif sayı girmediniz");
+		
+		if (negCount != 0)
+			System.out.printf("%d adet negatif sayı girdiniz%n", negCount);
+		else
+			System.out.println("Hiç negatif sayı girmediniz");		
+	}
+}
+
+!!!My Code!!!
 
 package csd;
 
@@ -259,9 +489,59 @@ public class Pazar_03_10_2019 {
 }
 
 8.
-
 // Parametresi ile aldigi int turden 3 basamakli bir sayinin basamaklarinin kupleri toplaminin kendisine
 // esit olup olmadigini donduren isArmstrong3digits metodunu yaziniz. Metot sayi basamakli degil ise false dondurecektir.
+
+!!!Teacher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{	
+		int n = 100;
+		
+		while (n <= 999) {
+			if (NumberUtil.isArmstrong3Digits(n))
+				System.out.printf("%d ", n);
+			
+			++n;
+		}
+		
+		System.out.println();
+    }	
+}
+
+class NumberUtil {
+	public static boolean isArmstrong3Digits(int val)
+	{
+		if (val < 0 || getDigitsCount(val) != 3)
+			return false;
+		
+		int a = val / 100;
+		int b = val / 10 % 10;
+		int c = val % 10;
+		
+		return getCubeSum(a, b, c) == val;
+	}
+	
+	public static int getCubeSum(int a, int b, int c)
+	{
+		return a * a * a + b * b * b + c * c * c;
+	}
+	
+	public static int getDigitsCount(int val)
+	{		
+		int count = 0;
+		
+		do {
+			++count;
+			val /= 10;			
+		} while (val != 0);
+		
+		return count;
+	}
+}
 
 03.16.2019
 
