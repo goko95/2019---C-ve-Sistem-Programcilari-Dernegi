@@ -551,6 +551,42 @@ class NumberUtil {
  * kullanmadan yaiziniz. Klavyeden girilen degerlerle cagirarak test ediniz.
  */
 
+!!!Teacher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("a:");
+		int a = Integer.parseInt(kb.nextLine());
+		
+		System.out.print("b:");
+		int b = Integer.parseInt(kb.nextLine());
+		
+		int result = NumberUtil.pow(a, b);
+		
+		System.out.printf("%d nin %d. kuvveti:%d%n", a, b, result);
+    }	
+}
+
+class NumberUtil {
+	public static int pow(int a, int b)
+	{
+		b = Math.abs(b);
+		
+		int result = 1;
+		
+		while (b-- > 0)
+			result *= a;		
+		
+		return result;
+	}
+}
+
+!!!My Code!!!
+
 package deneme;
 
 public class Cumartesi_03_16_2019 {
@@ -591,6 +627,35 @@ public class Cumartesi_03_16_2019 {
  * 
  * n! = 1*2...*n-1*n
  */
+
+!!!Teacher's Notes!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{
+		for (int n = 0; n <= 13; ++n)
+			System.out.printf("%d!=%d%n", n, NumberUtil.factorial(n));
+    }	
+}
+
+class NumberUtil {
+	public static int factorial(int n)
+	{
+		if (n < 0)
+			return -1;
+		
+		int result = 1;
+		
+		for (int i = 2; i <= n; ++i)
+			result *= i;		
+		
+		return result;
+	}
+}
+
+!!!My Code!!!
 
 package deneme;
 
@@ -634,6 +699,124 @@ public class Cumartesi_03_16_2019 {
  * Tanim: Basamaklarinin basamaksayinci kuvvetleri toplami kendisine esit olan sayilara Armstrong
  * sayilari denir.
  */
+
+!!!Teacher's Code!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{
+		for (int n = 0; n <= 999999; ++n)
+			if (NumberUtil.isArmstrong(n))
+				System.out.println(n);
+    }	
+}
+
+class NumberUtil {
+	public static boolean isArmstrong(int val)
+	{
+		if (val < 0)
+			return false;
+		
+		int count = getDigitsCount(val);
+		int sum = 0;
+		int temp = val;
+		
+		while (temp != 0) {
+			sum += pow(temp % 10, count);
+			temp /= 10;
+		}
+		
+		return sum == val;
+	}
+	
+	public static int getDigitsCount(int val)
+	{
+		int count = 0;
+		
+		do {
+			++count;
+			val /= 10;
+		} while (val != 0);
+		
+		return count;
+	}
+	
+	public static int pow(int a, int b)
+	{
+		b = Math.abs(b);
+		
+		int result = 1;
+		
+		while (b-- > 0)
+			result *= a;		
+		
+		return result;
+	}	
+}
+
+!!!Teacher's Notes v2!!!
+
+package csd;
+
+class App {
+	public static void main(String [] args)
+	{
+		for (int n = 0; n <= 999999; ++n)
+			if (NumberUtil.isArmstrong(n))
+				System.out.println(n);
+    }	
+}
+
+class NumberUtil {
+	public static int getDigitsPowSum(int val)
+	{
+		int count = getDigitsCount(val);
+		int sum = 0;	
+		
+		while (val != 0) {
+			sum += pow(val % 10, count);
+			val /= 10;
+		}
+		
+		return sum;				
+	}
+	
+	public static boolean isArmstrong(int val)
+	{
+		if (val < 0)
+			return false;
+		
+		return getDigitsPowSum(val) == val;
+	}
+	
+	public static int getDigitsCount(int val)
+	{
+		int count = 0;
+		
+		do {
+			++count;
+			val /= 10;
+		} while (val != 0);
+		
+		return count;
+	}
+	
+	public static int pow(int a, int b)
+	{
+		b = Math.abs(b);
+		
+		int result = 1;
+		
+		while (b-- > 0)
+			result *= a;		
+		
+		return result;
+	}		
+}
+
+!!!My Code!!!
 
 package deneme;
 
