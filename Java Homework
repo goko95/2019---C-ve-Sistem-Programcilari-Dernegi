@@ -286,3 +286,83 @@ public class Homework {
 			System.out.print(saniye);
 	}
 }
+
+03.18.2019
+
+/*-----------------------------------------------------------------
+  1. Bir sayinin asal carpanlarini yazdiran program yaziniz. Ornegin:
+  
+  Sayi: 12
+  2 2 3
+-----------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------
+  2. Klavyeden bir height ve width degiskenleri icin sayilar okuyunuz
+  ve asagidaki deseni olusturunuz:
+  |*      |
+  | *     |
+  |  *    |
+  |   *   |
+  |    *  |
+  |     * |
+  |      *|
+  |     * |
+  |    *  |
+-----------------------------------------------------------------*/
+
+package deneme;
+
+public class Cumartesi_03_16_2019 {
+
+	public static void main(String[] args) 
+	{
+		
+	}
+	
+	public static void print(int h, int w) 
+	{
+		boolean directionFlag = true;
+		boolean printFlag;
+		int val = 1;
+		int[][] matris = new int[h][w];
+		
+		for (int i = 0; i < h; i++)
+		{
+			printFlag = true;
+			
+			for (int k = 0; k < w; k++)
+			{
+				if (k == 0 || k == w - 1)
+					matris[i][k] = '|';
+				
+				if (printFlag) 
+				{
+					if (directionFlag) 
+					{
+						if (val == k)
+						{
+							if (val == w - 2)
+								directionFlag = false;
+							matris[i][k] = '*';
+							val++;
+							printFlag = false;
+						}
+					} else
+					{
+						if (val == k)
+						{
+							if (val == 1)
+								directionFlag = true;
+							matris[i][k] = '*';
+							val--;
+							printFlag = false;
+						}
+					}
+				}
+			}
+		}
+		
+		
+	}
+}
