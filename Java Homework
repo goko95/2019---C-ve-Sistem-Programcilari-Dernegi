@@ -296,6 +296,45 @@ public class Homework {
   2 2 3
 -----------------------------------------------------------------*/
 
+!!!V. 1!!!
+
+package deneme;
+
+public class Cumartesi_03_16_2019 {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz");
+		int val = Integer.parseInt(kb.nextLine())
+		searchDivition(val);
+		
+	}
+	
+	public static void searchDivition(int val) 
+	{
+		for (int i = 2; i <= val; i++)
+		{
+			if (val % i == 0)
+				findPrime(val);
+		}
+	}
+	
+	public static int findPrime(int divider)
+	{
+		for (int i = 2; i * i <= divider; i++)
+			if (divider % i == 0)
+				return 0;
+		
+		return divider;
+	}
+	
+	public static int printPrime() 
+	{
+		int times;
+		return 21;
+	}
+}
 
 /*-----------------------------------------------------------------
   2. Klavyeden bir height ve width degiskenleri icin sayilar okuyunuz
