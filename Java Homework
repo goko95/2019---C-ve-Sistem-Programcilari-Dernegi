@@ -311,6 +311,8 @@ public class Homework {
   |    *  |
 -----------------------------------------------------------------*/
 
+!!!V. 1!!!
+
 package deneme;
 
 public class Cumartesi_03_16_2019 {
@@ -361,8 +363,67 @@ public class Cumartesi_03_16_2019 {
 					}
 				}
 			}
-		}
+		}	
+	}
+}
+
+!!!V. 2!!! (Got help from Fırat Alpay)
+
+package deneme;
+
+public class Cumartesi_03_16_2019 {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Iki sayi giriniz");
 		
+		print(Integer.parseInt(kb.nextLine()),Integer.parseInt(kb.nextLine()));
+	}
+	
+	public static void print(int h, int w) 
+	{
+		boolean directionFlag = true;
+		int val = 0;
 		
+		for (int i = 0; i < h; i++)
+		{
+			if (directionFlag)
+			{
+				val++;
+			} else
+			{
+				val--;
+			}
+			
+			for (int k = 0; k < w; k++)
+			{
+				if (k == 0 || k == w - 1) 
+				{
+					System.out.print("|");
+					continue;
+				}
+				
+				if ((k > 0 && k < w - 1) && k != val)
+				{
+					System.out.print(" ");
+					continue;
+				}
+				
+				
+				if (val == k)
+					{
+						if (val == w - 2)
+							directionFlag = false;
+						if (val == 1)
+							directionFlag = true;
+						System.out.print("*");
+						printFlag = false;
+					}
+					
+				
+			}
+			System.out.println();
+		}		
 	}
 }
