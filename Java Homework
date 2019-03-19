@@ -466,3 +466,14 @@ public class Cumartesi_03_16_2019 {
 		}		
 	}
 }
+
+/*-----------------------------------------------------------------
+  3. 2'den buyuk tum cift sayilar iki asal sayinin toplami biciminde
+  yazilabilir (Goldbach teoremi). Klavyeden bir cift sayi alan ve bunu
+  iki asal sayinin toplami biciminde yazdiran programi yaziniz. Ornegin:
+  
+  Sayi: 16
+  
+  11 + 5
+-----------------------------------------------------------------*/
+
