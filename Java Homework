@@ -477,3 +477,121 @@ public class Cumartesi_03_16_2019 {
   11 + 5
 -----------------------------------------------------------------*/
 
+!!!03.20.2019!!!
+
+/*-----------------------------------------------------------------
+  1. abc uc basamakli bir tamsayidir ve asagidaki kosullari saglamaktadir:
+  
+  kosul 1: cba > abc olacak
+  kosul 2: abc asal sayi olacak
+  kosul 3: cba asal sayi olacak
+  kosul 4: ab asal sayi olacak
+  kosul 5: bc asal sayi olacak
+  kosul 6: cb asal sayi olacak
+  kosul 7: ba asal sayi olacak
+-----------------------------------------------------------------*/
+
+package csd;
+
+public class Odev {
+	public static void main(String[] args) 
+	{
+		run();
+	}
+	
+	public static void run()
+	{
+		int x1 = 0;
+		int x2 = 0;
+		int x3 = 0;
+		int i = 100;
+		
+		while (i <= 999)
+		{
+			while (i <= 999) 
+			{
+				int val = i;
+				x1 = val % 10;
+				val = val / 10;
+				x2 = val % 10;
+				val = val / 10;
+				x3 = val;
+				break;
+			}
+		
+			boolean[] control = new boolean[7];
+		
+			control[0] = kosul1(x3,x2,x1,i);
+			control[1] = kosul2(i);
+			control[2] = kosul3(x3,x2,x1);
+			control[3] = kosul4(x3,x2);
+			control[4] = kosul5(x2,x1);
+			control[5] = kosul6(x2,x1);
+			control[6] = kosul7(x3,x2);
+			
+			if (control[0] && control[1] && control[2] && control[3] && control[4] && control[5] && control[6])
+				System.out.println(i);
+			
+			i++;
+		}
+	}
+	
+	public static boolean kosul1 (int a, int b, int c, int i)
+	{
+		int val = c * 100 + b * 10 + a; 
+		
+		if (val > i)
+			return true;
+		else
+			return false;
+	}
+	
+	public static boolean isPrime (int val)
+	{
+		for (int i = 2; i * i <= val; i++)
+			if (val % i == 0)
+				return false;
+		
+		return true;
+	}
+	
+	public static boolean kosul2 (int i)
+	{
+		return isPrime(i);
+	}
+	
+	public static boolean kosul3 (int a, int b, int c)
+	{
+		int val = c * 100 + b * 10 + a;
+		
+		return isPrime(val);
+	}
+	
+	public static boolean kosul4 (int a, int b)
+	{	
+		int val = a * 10 + b; 
+		
+		return isPrime(val);
+	}
+	
+	public static boolean kosul5 (int b, int c)
+	{
+		int val = b * 10 + c;
+		
+		return isPrime(val);
+	}
+	
+	public static boolean kosul6 (int b, int c)
+	{
+		int val = c * 10 + b;
+		
+		return isPrime(val);
+	}
+	
+	public static boolean kosul7 (int a, int b)
+	{
+		int val = b * 10 + a;
+		
+		return isPrime(val);
+	}
+}
