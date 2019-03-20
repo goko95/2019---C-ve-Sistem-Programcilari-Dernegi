@@ -595,3 +595,92 @@ public class Odev {
 		return isPrime(val);
 	}
 }
+
+/*----------------------------------------------------------------------------------------------------------------------	
+	2. Asagidaki aciklanan isPrimeX metodunu yaziniz:
+	
+	isPrimeX metoduna gonderilen argumanin asal olup olmadigi test edilecek, eger sayi asal ise bu kez sayinin basamak
+	degerleri toplanarak elde edilen sayinin asal olup olmadigi test edilecektir. bu islem sonucta tek basamakli bir sayi
+	kalana kadar devam edilecektir. Eger en son elde edilen tek basamakli sayi dahil tum sayilar asal ise isPrimeX metodu
+	true degerine geri donecektir. Eger herhangi bir kademede asal olmayan bir sayi elde edilirse metot false degerine
+	geri donecektir. 
+----------------------------------------------------------------------------------------------------------------------*/
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		run();
+	}
+
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz");
+		int val = Integer.parseInt(kb.nextLine());
+		
+		boolean control = true;
+		
+		while (val != 0)
+		{
+			control = isPrimeX(val);
+			
+			if (control && val >= 10)
+				val = ifPrime(val);
+			else
+				break;
+		}
+			
+		System.out.println(control);
+	}
+	
+	public static boolean isPrimeX(int val)
+	{
+		if (val <= 1)
+			return false;
+		
+		if (val % 2 == 0)
+			return val == 2;
+		
+		if (val % 3 == 0)
+			return val == 3;
+		
+		if (val % 5 == 0)
+			return val == 5;
+		
+		if (val % 7 == 0)
+			return val == 7;
+		
+		if (val % 11 == 0)
+			return val == 11;
+		
+		for (int i = 13; i * i <= val; i += 2)
+			if (val % i == 0)
+				return false;
+		
+		return true;
+	}
+	
+	public static int ifPrime(int prime)
+	{
+		int count = 0;
+		int temp = prime;
+		int sum = 0;
+		
+		while (temp != 0)
+		{
+			temp = temp / 10;
+			count++;
+		}
+		
+		for (int i = 0; i < count; i++)
+		{
+			sum = sum + prime % 10;
+			prime = prime / 10;
+		}
+		
+		return sum;
+	}
+}
