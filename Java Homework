@@ -948,3 +948,158 @@ public class Oddev {
 	}
 }
 
+!!!04.02.2019!!!
+
+/*--------------------------------------------------------------------------------------
+	1. e sayisini asagidaki seri toplamiyla bulabilirsiniz
+	
+	e = 1/0! + 1/1! + 1/2! + 1/3! + ...
+	
+	Bir Java programi yazarak e sayisini yukaridaki seri toplamiyla hesaplayarak ekrana 
+	yazdiriniz.
+--------------------------------------------------------------------------------------*/
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz:");
+		System.out.printf("e = %f" , run(Integer.parseInt(kb.nextLine())));
+	}
+
+	public static double run(int val)
+	{
+		double a;
+		double b = 1;
+		
+		for (int i = 1; i <= val; i++)
+		{
+			a = 1;
+			for (int k = 1; k <= i; k++)
+			{
+				a *= 1/(double)k;
+			}
+			
+			b += a;
+		}
+		
+		return b;
+	}
+}
+
+/*--------------------------------------------------------------------------------------
+	2. Parametresi ile aldigi pozitif bir tamsayinin kendisi haric tum carpanlarinin 
+	toplami ile geri donen sumFactors metodunu yaziniz. Metot parametresi ile aldigi sayi
+	haric tum carpanlarinin toplamina geri donecektir. (1 her sayinin dogal carpanidir ve
+	toplama dahil edilecektir.)
+--------------------------------------------------------------------------------------*/
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Bir sayi giriniz: ");
+		System.out.println(sumFactors(Integer.parseInt(kb.nextLine())));
+	}
+
+	public static int sumFactors(int val)
+	{
+		int sum = 0;
+		
+		for (int i = 1; i < val; i++)
+			sum += val % i == 0 ? i : 0;
+		
+		return sum;
+	}
+}
+
+/*--------------------------------------------------------------------------------------
+	3. x ve y pozitif tamsayilar olmak uzere eger x sayisinin kendisi haric bolenleri
+	toplami y sayisina ve ayni zamanda y sayisinin kendisi haric bolenleri toplami x 
+	sayisina esit ise bu sayilar arkadastir denir. Ornegin 220 ve 284 sayilari arkadas
+	sayilardir. Parametre olarak aldigi iki tamsayinin arkadas olup olmadiklarini test
+	eden areFriends metodunu yaziniz. Metodunuzu dort basamakli bir arkadas sayi cifti
+	bulan bir kodla test edebilirsiniz.
+--------------------------------------------------------------------------------------*/
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		findFriends();
+	}
+
+	public static boolean areFriends(int x, int y)
+	{
+		int sumX = 0;
+		int sumY = 0;
+		
+		for (int i = 1; i < x; i++)
+			sumX += x % i == 0 ? i : 0;
+		
+		for (int i = 1; i < y; i++)
+			sumY += y % i == 0 ? i : 0;
+		
+		return sumX == y && sumY == x;
+	}
+	
+	public static void findFriends()
+	{
+		for (int a = 1000; a <= 9999; a++)
+			for (int b = 1000; b <= 9999; b++)
+				if (areFriends(a,b))
+					System.out.printf("(%d, %d)%n" , a, b);
+	}
+}
+
+/*--------------------------------------------------------------------------------------
+	4. Kendisi haricindeki tum pozitif bolenlerinin toplamina esit olan tamsayilara
+	"mukemmel sayi" (perfect number) denir. Ornegin 6 ve 28 sayilari mukemmel sayilardir
+	
+	6 = 1 + 2 + 3
+	28 = 1 + 2 + 4 + 7 + 14
+	
+	a) Parametresi ile aldigi int turden bir degerin mukemmel sayi olup olmadigini test
+	eden isPerfect metodunu yaziniz.
+	
+	Metot sayi mukemmel ise true mukemmel degil ise false degerine geri donecektir.
+	
+	b) 4 basamakli tek bir mukemmel sayi vardir. Yazmis oldugunuz isPerfect metodunu
+	kullanarak 4 basamakli mukemmel sayiyi bulan programi yaziniz.
+--------------------------------------------------------------------------------------*/
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		findPerfect();
+	}
+
+	public static boolean isPerfect(int val)
+	{
+		int sum = 0;
+		
+		for (int i = 1; i < val; i++)
+			sum += val % i == 0 ? i : 0;
+		
+		return sum == val;
+	}
+	
+	public static void findPerfect()
+	{
+		for(int k = 1; k <= 9999; k++)
+			if (isPerfect(k))
+				System.out.printf("%d%n", k);
+	}
+}
+
