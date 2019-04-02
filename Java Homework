@@ -832,3 +832,119 @@ public class Oddev {
 		return sum;
 	}
 }
+
+!!!04.01.2019!!!
+
+/*--------------------------------------------------------------------------------------
+	1. Klavyeden girilen tamsayi degerlerin, toplam sayisini, en buyugunu, en kucugunu 
+	ve ortalamasini hesaplayan programi yaziniz. Kullanicinin her deger girisinden once
+	, yeni bir deger girmek isteyip istemedigi asagidaki gibi sorulacaktir
+	
+	Yeni bir deger girmek istiyor musunuz? [Evet icin 1 hayir icin 0 degerlerinden birini
+	giriniz.]
+	
+	Kullanici 1 sayisini girerse, program kullanicinin bir deger girmesini isteyecektir.
+	
+	bir tamsayi giriniz: 53 enter
+	
+	Kullanici 0 sayisini girerse, program o ana kadar girilen degerlerle ilgili olarak 
+	asagidaki dokumu ekran ciktisi olarak vererek sonlanacaktir:
+	
+	Toplam 17 deger girildi.
+	Max = 89
+	Min = 17
+	Ortalama = 37.12311
+	
+	program sonlandi.
+	
+	Kaynak programda dizi kullanilmayacaktir.
+--------------------------------------------------------------------------------------*/
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		run();
+	}
+
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		int max = -299999999, min = 299999999, val;
+		int count = 0, sum = 0;
+		double avg = 0;
+		
+		System.out.println("Bir deger girmek istiyor musunuz? %n[Evet icin 1, Hayir icin 0 degerlerinden birini giriniz]");
+		
+		while (Integer.parseInt(kb.nextLine()) == 1)
+		{
+			System.out.print("Bir sayi giriniz: ");
+			val = Integer.parseInt(kb.nextLine());
+			
+			count++;
+			sum += val;
+			max = max < val ? val : max;
+			min = min > val ? val : min;
+			
+			System.out.println("Yeni bir deger girmek istiyor musunuz? %n[Evet icin 1, Hayir icin 0 degerlerinden birini giriniz]");
+		}
+		
+		avg = sum / (double)count;
+		
+		System.out.printf("Toplam %d deger girildi.%nMax = %d%nMin = %d%nOrtalama = %f", count, max, min, avg);
+	}
+}
+
+/*--------------------------------------------------------------------------------------
+	2. Girilen degerler [0 - 100] araliginda olmalidir. Gecersiz bir deger girilmesi
+	sirasinda ekrana 
+	"gecersiz deger" 
+	uyarisi yazilacak ve yeni bir giris yapilmasi istenecektir.
+	"yeni bir deger giriniz"
+--------------------------------------------------------------------------------------*/
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		run();
+	}
+
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		int max = -299999999, min = 299999999, val;
+		int count = 0, sum = 0;
+		double avg = 0;
+		
+		System.out.printf("Bir deger girmek istiyor musunuz? %n[Evet icin 1, Hayir icin 0 degerlerinden birini giriniz]%n");
+		
+		while (Integer.parseInt(kb.nextLine()) == 1)
+		{
+			System.out.print("Bir sayi giriniz: ");
+			val = Integer.parseInt(kb.nextLine());
+			
+			while (val < 0 || val > 100)
+			{
+				System.out.printf("Gecersiz deger %nBir sayi giriniz: ");
+				val = Integer.parseInt(kb.nextLine());
+			}
+			
+			count++;
+			sum += val;
+			max = max < val ? val : max;
+			min = min > val ? val : min;
+			
+			System.out.printf("Yeni bir deger girmek istiyor musunuz? %n[Evet icin 1, Hayir icin 0 degerlerinden birini giriniz]%n");
+		}
+		
+		avg = sum / (double)count;
+		
+		System.out.printf("Toplam %d deger girildi.%nMax = %d%nMin = %d%nOrtalama = %f", count, max, min, avg);
+	}
+}
+
