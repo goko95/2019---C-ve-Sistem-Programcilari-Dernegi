@@ -887,6 +887,77 @@ public class Oddev {
 	}
 }
 
+!!!V. 2!!! (04.06.2019)
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz");
+		System.out.print(isPrimeX(Integer.parseInt(kb.nextLine())));
+	}
+	
+	public static boolean isPrime(int val) 
+	{
+		if (val <= 1)
+			return false;
+		
+		if (val % 2 == 0)
+			return val == 2;
+		
+		if (val % 3 == 0)
+			return val == 3;
+		
+		if (val % 5 == 0)
+			return val == 5;
+		
+		if (val % 7 == 0)
+			return val == 7;
+		
+		if (val % 11 == 0)
+			return val == 11;
+		
+		for (int i = 13; i * i <= val; i += 2)
+			if (val % i == 0)
+				return false;
+		
+		return true;
+	}
+	
+	public static boolean isPrimeX(int val)
+	{
+		int temp = 0;
+		
+		while(true)
+			if (isPrime(val))
+			{
+				while (val != 0)
+				{
+					temp += val % 10;
+					val /= 10;
+				}
+				
+				val = temp;
+				
+				if (val == 2)
+					return true;
+				
+				if (val == 3)
+					return true;
+				
+				if (val == 5)
+					return true;
+				
+				if (val == 7)
+					return true;
+			} else
+				return false;
+	}
+}
+
 !!!04.01.2019!!!
 
 /*--------------------------------------------------------------------------------------
