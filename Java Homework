@@ -238,6 +238,50 @@ public class Homework {
 	}
 }
 
+!!!V. 2!!! (04.06.2019)
+
+package csd;
+
+public class Oddev {
+
+	public static void main(String[] args) 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.println("Bir sayi giriniz");
+		run(Integer.parseInt(kb.nextLine()));
+	}
+	
+	public static void run(int val)
+	{
+		int countSpace = val - 1, max = val * 2 - 1, countSign = 1;
+		boolean flagSpace = true, flagSign = true; 
+				
+		for (int i = 0; i < max; i++) 
+		{
+			for (int k = 0; k < countSpace; k++)
+				System.out.print(" ");
+			
+			for (int k = 0; k < countSign; k++)
+				System.out.print("*");
+			
+			flagSpace = countSpace == 0 ? false : flagSpace;
+			flagSign = countSign == max ? false : flagSign;
+			
+			if (flagSpace)
+				countSpace--;
+			else
+				countSpace++;
+			
+			if (flagSign)
+				countSign += 2;
+			else
+				countSign -= 2;
+			
+			System.out.println("");
+		}
+	}
+}
+
 /*-----------------------------------------------------------------
   2. Parametresi ile aldigi long turden saniye cinsinden sureyi saat,
   dakika ve saniye olarak ayristirarak ekrana yazdiran displayDuration
