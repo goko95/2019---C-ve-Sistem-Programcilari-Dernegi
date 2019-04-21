@@ -1,1 +1,15 @@
+                                           !!!Temel Kavramlar!!!
 
+Programlama dilleri 3 biçimde sınıflandırılır:
+  1- Seviyelerine göre
+  2- Kullanım alanlarına göre
+  3- Programlama modeline göre:
+        1- Sınıflar kullanılarak yazılan modele nesne yönelimli model (object oriented model) denir.
+        2- Matematiksel formül yazar gibi yazılan modele fonksiyonel (functional) proramlama modeli denir.
+        3- Bazı diller birden fazla modeli destekler, bunlara çok modelli (multiparadigm) diller denir.
+        
+Tiobe adlı şirket hangi dilin ne kadar kullanıldığı ile ilgili istatistik tutar.
+
+Çevirici Program (Translater): Bir programlama dilinde yazılmış olan programı edeğer olarak başka bir dile 
+  dönüştürür. Çevirici programlarda kaynak dil (source language) ve hedef dil (target language) vardır.
+Derleyici (Compiler):
