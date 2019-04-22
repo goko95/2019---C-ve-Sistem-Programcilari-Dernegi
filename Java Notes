@@ -1,3 +1,8 @@
+(Burada bulunan açıklamalar C ve Sistem Programcıları Derneği'nin Java Kursu'nun notlarından derlenmiştir.)
+(Buradaki yazıları Derneğin Kursuna KATILMADAN okumak sizin açınızdan tavsiye edilmez. Kavramlar daha
+kapsamlı bir şekilde kursta işlenir ve notlar hatırlatıcı amaçla verilir.)
+
+
                                            !!!Temel Kavramlar!!!
 
 Programlama dilleri 3 biçimde sınıflandırılır:
@@ -12,4 +17,73 @@ Tiobe adlı şirket hangi dilin ne kadar kullanıldığı ile ilgili istatistik 
 
 Çevirici Program (Translater): Bir programlama dilinde yazılmış olan programı edeğer olarak başka bir dile 
   dönüştürür. Çevirici programlarda kaynak dil (source language) ve hedef dil (target language) vardır.
-Derleyici (Compiler):
+Derleyici (Compiler): Hedef dilin alçak seviyeli dil (saf makine dili, sembolik makine dili ya da
+  arakod) olduğundaki bu çevirici progranlara denir.
+Yorumlayıcı (Interpreter): Bazı programlar hiç kod üretmeden doğrudan çalırlar ve bunları çalıtıran 
+  programlardır.
+  
+Not: Bazı diller ya derleyici ile ya da yorumlayıcı ile, bazıları da her ikisi ile birlikte çalışırlar.
+Java DERLEYİCİ ile çalışır.
+
+İşletim Sistemi: Makine donanımını yöneten, bilgisayar ile kullanıcı arasında bağ kuran bir sistem
+  yazılımdır. Işletim sistemleri iki gruba ayrılır: Masaüstü (Desktop) ve Mobil (Mobile).
+
+Her mobil sistemin kendine özgü bir geliştirme dili ve ortamı vardır. Tek bir ortamda gelitirilen ve
+  tümünde çalıabilen platformlar üzerine çalılsa da henüz tam başarı sağlanamamıştır. 
+Java özellikle Android iletim sistemindeki uygulamaların geliştirilmesinde yaygın olarak kullanılır.
+
+Açık Kaynak Yazılım (Open Source) ve Özgür Yazlım (Free Software) Temel Prensipleri:
+  - Bedavadır ve kullanmak için herhangi bir lisans ücreti ödenmesi gerekmez
+  - Kaynak kod sahiplenilemez, Kaynak kod üzerine ekleme yapıldığında kodlar kapatılamaz. Onlarında açılması
+      gerekir.
+  - Çoğaltılabilir, izin almadan kullanılabilir.
+Not: Açık Kaynak Yazılım ile Özgür Yazılım arasında bazı faklar vardır.
+       (https://opensource.com/article/17/11/open-source-or-free-software)
+Mülkiyete Sahip Yazılım (Propriatery Software): Bu yazılımlar para verilerek kullanılır ve çoğaltılamazlar.
+
+IDE (Integrated Development Environment): Derleyiciler komut satırından çalıştırılan basit bir arayüze 
+                                            sahip programlardır. Aslında teorik olarak Java ile 
+                                            geliştirilecek her uygulama notepad gibi basit bir editörle 
+                                            yazılıp, komut satırından derlenebilir. Fakat pratikte bu 
+                                            şekilde program yazmak oldukça fazla zaman alır. Yazılım 
+                                            geliştirmeyi kolaylaştırmak için ismine IDE denilen özel
+                                            yazılımlar bulunmaktadır. IDE lerin içerisinde editörler, 
+                                            yardımcı araçlar, test araçları, çeşitli kodları otomatik
+                                            olarak yazabilen araçlar vs bulunur. Java ile uygulama 
+                                            geliştirilirken kullanılabilecek çeşitli IDE ler bulunmaktadır.
+Not: En yaygın kullanlılan IDE'ler Eclipse, IntelliJIdea ve Netbeans'dir.
+
+Dil Kavramı: Dil iletişimde kullanılan semboller topluluğudur ve kurallarına gramer denir. Gramerin çeşitli
+               alt dalları vardır, ancak en önemlileri sentaks (syntax) ve semantik (semantic) alanlarıdır.
+               Bir olgunun dil olabilmesi için en azından sentaks ve semantiğe sahip olması gerekir.
+Sentaks: Doğru yazıma ve doğru dizilime ilikin kurallardır.
+           Örnek: "I a student am"
+                  Bu cümlede dizilim yanlış olduğundan sentaks hatası vardır.
+           Örnek: "System.out.println("Merhaba Java"
+                  Bu cümlede yazım yanlış olduğundan sentaks hatası vardır.
+Semantik: Dildeki doğru yazılmış ve dizilmiş öğelerin ne anlam ifae ettiklerine ilişkin kurallardır.
+            Örnek: "My name was Ali"
+                   Bu cümlede söylenmek istenen "My name is Ali" olduğundan mantıksal bir yanlış vardır,
+                   yani semantik hata vardır. (Semantik hata çalıştırıldığında yazılmış geçersiz bir 
+                   programlama matığının yanlış sonuçlar üretmesi sonucu oluşur.)
+
+Bilgisayar Dilleri (Computer Languages): Bilgisayar bilimlerinde kullanılmak üzere tasarlanmış dillerdir.
+Programlama Dilleri (Programming Languages): Bir bilgisayar dilinde akışın varolduğu dillerdir.
+Not: Her programlama dili bir bilgisayar dilidir, ancak her bilgisayar dili bir programlama dili
+       olmayabilir.
+
+Atom (Token): Bir programlama dilindeki kendi başına anlamlı olan en küçük yapı birimidir.
+                Atomlar 6 gruba ayrılır:
+                  1-Anahtar Sözcükler (Keywords / Reserved Words): Dil için anlamı olan ve değişken ismi
+                                                                     olarak kullanılması yasak olan 
+                                                                     atomlardır.
+                  2- Değişkenler (Identifiers / Variables): İsmini programcının belli bir kuralla
+                                                              belirlediği atomlardır.
+                  3- Operatörler (Operators): 
+                  4- Sabitler (Literals / Constants):
+                  5- Stringler (String Literals):
+                  6- Ayraçlar (Delimiters / Punctuators):
+
+
+
+
