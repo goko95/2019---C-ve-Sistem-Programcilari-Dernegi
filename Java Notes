@@ -95,8 +95,72 @@ Java programlama dilinin yazım kuralı iki madde ile özetlenebilir:
        (Anahtar sözcüklerle değişken arasında en az bir boşluk karakteri olması gerekir.)
 
 Derleyicilerin hata mesajları 3 gruba ayrılmaktadır:
-  1- Uyarılar (Warnings):
-  2- Gerçek Hatalar (Errors):
-  3- Ölümcül Hatalar (Fatal Errors):
+  1- Uyarılar (Warnings): Byte kodun (.class uzantılı dosya) oluşmasına engel olmayan, olası mantık
+                            hatalarının programcıya bildirilmesi amacıyla kullanılan mesajlardır.
+                            Programcı uyarıları dikkate almalıdır. Bir programın özel bir durumu yoksa
+                            hiç uyarı mesajı alınmadan derlenmesi hedeflenmelidir.
+  2- Gerçek Hatalar (Errors): Dilin sentaks ve semantik kurallarına uyulmamasından kaynaklanan hatalardır.
+                                Bir programda tek bir gerçek hata olsa bile byte kod üretilmez. Şüphesiz
+                                programcı tüm gerçek hataları düzelttiğinde programı derleyebilirve ara
+                                kod üretilebilir.
+  3- Ölümcül Hatalar (Fatal Errors): Derleme işleminin bitirilmesini dahi engelleyecek ciddi hatalardır.
+                                       Programcının kod olarak yapabileceği bir şey yoktur. Genellikle
+                                       sistemdeki problemler yüzünden ortaya çıkmaktadır.
+
+Sentaks İçin Genel Biçimler: Programlama dillerinin standartlarında ya da spesifikasyonlarında iki 
+                               anlamlılığa (ambiguity) izin vermeyen BNF (Backus-Naur Form) notasyonu ya
+                               da türevleri kullanılmaktadır.
+Not: Bu dosyada kurstaki gibi notasyonlar kullanılacaktır. Açısal parantez ( <> ) mutlaka olması gereken
+       öğeler için ve köşeli parantez ( [] ) isteğe bağlı olan öğeler için.
+
+Genel olarak söylemek gerekirse bir Java programı paketlerden (package), paketler sınıflardan (class),
+  sınıflar da metotlardan oluşur. Bir sınıfı bir paket içerisinde bildirmek için o sınıfın .java
+  dosyasının en tepesinde aşağıdaki gibi bildirim yapmak gerekir:
+    package <paket ismi>;
+
+Bununla birlikte bir sınıf bir paket içerisinde ise diskte o paket isminde bir dizinin (folder)
+  içerisinde bulunması gerekmektedir. Derleme sonucunda üretilen arakodun da paket isminde bir dizin
+  içerisinde olması zorunluluktur. Paket kavramı daha sonra detaylı olarak ele alınacaktır.
+  
+  Sınıf bildiriminin genel biçimi şöyledir:
+    [erişim belirleyici] class <sınıf ismi> {
+      //...
+    }
+Burada görüldüğü gibi sınıf bildiriminin başındaki erişim belirleyici olmayabilir. Sınıf kavramı daha sonra
+  detaylı olarak ele alınacaktır.
+
+Metot bildiriminin genel biçimi şöyledir:
+  [erişim belirleyici] [static] <geri dönüş değerinin türü><metot ismi>([parametre bildirimi])
+    {
+      //...
+    }
+
+Java programlama dilinde alt programlara metot denir. Erişim belirleyici şunlardan biri olabilir:
+  public
+  protected
+  private
+Hiçbir belirleyici de yazılmayabilir (no modifier).
+
+Bir metot ayrıca static anahta sözcüğü ile bildirilirse static olur.
+
+Java programları main isimli bir metottan çalışmaya başlar.
+
+Bir metodun bildirilmesi (declaration) demek onun programcı tarafından yazılması demektir. Çağrılması
+  (call) ise çalıştırılması demektir. Static bir metodu çağırmanın genel biçimi şöyledir:
+    [paket ismi][.][sınıf ismi][.]<metot ismi>([argüman listesi]);
+Eğer çağrılan metodun (callee) bildirimi çağıran metodun (caller) bildirimi ile aynı paket içerisindeyse
+  (farklı sınıflarda olabilirler) paket ismi hiç yazılmayabilir (istenirse yazılabilir).
+
+Yorum Satırları (Comment Lines): Bir programın kaynak kodunda derleyici tarafından dikkate alınmayan kod
+                                   bölümleridir. Yorum satırları program içerisinde çeşitli açıklamalar
+                                   yapmak amacıyla kullanılabilir. Program kodu içerisinde gerektiğinden
+                                   fazla yorum satırı kullanmak kodun okunabilirliğini bozabilmektedir.
+                                   Buna dikkat edilmesi gerekir.
+                                   Java programlama dilinde yorum satırları iki biçimde oluşturulabilir:
+                                     1- //bu atom ile oluturulan satır kullanıldığı yerden itibaren yok
+                                          sayılır.
+                                     2- /*bu atomlar arasında kalan kod bölümleri yok sayılır birden fazla
+                                          satır için kullanılabilir.*/
+
 
 
