@@ -79,11 +79,24 @@ Atom (Token): Bir programlama dilindeki kendi başına anlamlı olan en küçük
                                                                      atomlardır.
                   2- Değişkenler (Identifiers / Variables): İsmini programcının belli bir kuralla
                                                               belirlediği atomlardır.
-                  3- Operatörler (Operators): 
-                  4- Sabitler (Literals / Constants):
-                  5- Stringler (String Literals):
-                  6- Ayraçlar (Delimiters / Punctuators):
+                  3- Operatörler (Operators): Bir işleme yol açan ve işlem sonucunda bir değer 
+                                                üretilmesini sağlayan atomlardır.
+                  4- Sabitler (Literals / Constants): Program kodu doğrudan yazılmış sayılara denir.
+                  5- Stringler (String Literals): İki tırnak içerisindeki yazılara tırnaklarıyla 
+                                                    birlikte string atomu denir.
+                  6- Ayraçlar (Delimiters / Punctuators): Yukarıdaki gruplar dışında kalan tüm atomlara
+                                                            ayıraç atomlar denilmektedir.
+Boşluk Karakterleri (White Space): Klavyeden boşluk duygusu yaratmak için basılan karakterlerdir. Boşluk
+                                     karakterleri tipik olarak SPACE, TAB, ENTER karakterleridir.
 
+Java programlama dilinin yazım kuralı iki madde ile özetlenebilir:
+  1- Atomlar arasında istenildiği kadar boşluk bırakılabilir.
+  2- Anahtar sözcükler ve değişkenler dışında kalan atomlar istenildiği kadar bitişik yazılabilir.
+       (Anahtar sözcüklerle değişken arasında en az bir boşluk karakteri olması gerekir.)
 
+Derleyicilerin hata mesajları 3 gruba ayrılmaktadır:
+  1- Uyarılar (Warnings):
+  2- Gerçek Hatalar (Errors):
+  3- Ölümcül Hatalar (Fatal Errors):
 
 
