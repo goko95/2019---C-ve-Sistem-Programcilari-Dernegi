@@ -165,7 +165,17 @@ Yorum Satırları (Comment Lines): Bir programın kaynak kodunda derleyici taraf
 
                                       !!!Türler & Bildirim!!!
 
+Tür Belirten Anahtar Sözcük  |  Uzunluk (Byte)  |  Sınır Değerler
+short                        |  2               |  [-32 768, +32 767]
+int                          |  4               |  [-2 147 483 648, +2 147 483 647]
+long                         |  8               |  [-9 223 372 036 854 775 808, +9 223 372 036 854 775 808]
+byte                         |  1               |  [-128, +127]
+float                        |  4               |  [+-3.6*10^-38, +-3.6*10^+38]
+double                       |  8               |  [+-1.8*10^-308, +-1.8*10^+308]
+boolean                      |  -               |  true, false
+char                         |  2               |  [0, +65 635]
 
+- int
 
 
 
