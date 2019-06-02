@@ -175,7 +175,26 @@ double                       |  8               |  [+-1.8*10^-308, +-1.8*10^+308
 boolean                      |  -               |  true, false
 char                         |  2               |  [0, +65 635]
 
-- int
+- Java da işaretsiz tamsayı türleri yoktur. Ancak Java 8 den itibaren 4 byte'lık işaretsiz tamsayı
+    işlemleri yapılabilmektedir. Bu konu ileride ele alınacaktır.
+- byte, short, int, long türlerinin içindeki değerler tamsayı değerleridir.
+- float ve double türlerinin değerleri kayan noktalı (floating point) formatta tutan türlerdir. float ve
+    double türleri sayıları sırasıyla tek hassasiyetli (single-precision) ve çift hassasiyetli
+    (double-percision) olarak IEEE 754 standardına göre tutulmaktadır. Bu türlerde bazı sayılar tam olarak
+    ifade edilemezler. O sayıya yakın bir sayı ile ifadde edilebilirler. Bir noktalı sayının ifade
+    edilemeyip ona yakın olan bir sayının ifade edilmesiyle oluşan hataya yuvarlama hatası (rounding
+    error) denilmektedir. Yuvarlama hataları değer ilk kez yerleştirilirken oluşabileceği gibi, bir
+    işlemin sonucunda da oluşabilmektedir.
+- float türünün yuvarlama hatalarına karşı direnci zayıftır. bu nedenle double türü daha fazla tercih
+    edilmektedir.
+- Yuvarlama hataları sebebiyle özellikle finansal uygulamalarda hatalı değerler oluşşabilmektedir. Bunun
+    için Java'da java.math paketi içerisinde BigDecimal isimli bir sınıf bulunmaktadır. Bu tarz
+    uygulamalarda BigDecimal sınıfı kullanılmak durumundadır. Bu konu uygulama kursunda ele alınacaktır.
+- char türü Java'da UNICODE tablo dikkate alınarak belirlenmiştir. Bu nedenle char türü 2 byte'dır. Yani
+    char türden bir değişkenin içerisine herhangi bir karakterin UNICODE tablosundaki sıra numarası
+    yerleştirilebilir. UNICODE tablo dünyadaki neredeyse bütün dillerin karakterlerini ve pek çok özel
+    karakteri ifade edebilme yeteneğine sahiptir. (www.unicode.org)
+- 
 
 
 
