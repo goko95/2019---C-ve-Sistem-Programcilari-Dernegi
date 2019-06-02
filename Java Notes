@@ -232,6 +232,16 @@ Yerel bildirimler
   Not: Bir değişkenin içerisindeki değerler print ve ğrintln metotlarıyla yazdırılabilirler.
   
 Değişkenlere İlkdeğer Verilmesi
-  B
+  Bildirim işleminin bir parçası olarak değişkenlere değer atanmasına ilk değer verme (initialization)
+    denilmektedir.
+  İlk değer verme ve ilk kez değer verme işlemleri çoğu zaman işlevleri aynı olsa da teknik olarak aynı
+    değildir.
+  Örnek:
+    int a = 8; //İlkdeğer verme işlemi
+    int b;
+    b = 11; //İlk kez değer verme işlemi
+
+Değişkenlerin Faaliyet Alanları
+
 
 
