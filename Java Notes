@@ -276,6 +276,46 @@ Değişken İsimlendirme Kuralları
 
 Klavyeden Değer Okunması
   Java'da klavyeden değer okumak için birden fazla yöntem bulunmaktadır. Ancak burada basit olarak Scanner
-    sınıfı kullanılacaktır.
+    sınıfı kullanılacaktır. Scanner sınıfı Java 5'den sonra standart kütüphaneye eklenmiştir ve java.util
+    paketi içerisinde bulunmaktadır.
+    
+  Klavyeden int türden bir değer okuma işlemi için:
+  package csd;
+  
+  class App{
+         public static void main(String [] args)
+         {
+                java.util.Scanner kb = new java.util.Scanner(System.in);
+                int val = Integer.parseInt(kb.nextLine());
+         }
+  }
+  
+  Klavyeden long türden bir değer okuma işlemi için:
+  package csd;
+  
+  class App{
+         public static void main(String [] args)
+         {
+                java.util.Scanner kb = new java.util.Scanner(System.in);
+                int val = Long.parseLong(kb.nextLine());
+         }
+  }
+  
+  Klavyeden Double türden bir değer okuma işlemi için:
+  package csd;
+  
+  class App{
+         public static void main(String [] args)
+         {
+                java.util.Scanner kb = new java.util.Scanner(System.in);
+                int val = Double.parseDouble(kb.nextLine());
+         }
+  }
+  
+İfade Kavramı
+  Değişkenlerin, sabitlerin ve operatörlerin herhangi bir kombinasyonuna ifade (expression) denir.
+  Tek başına bir değişken ifade belirtir. Tekbaşına bir sabit de ifade belirtir; ancak tek başına bir
+    operatör ifade belirtmez.
+  
 
 
