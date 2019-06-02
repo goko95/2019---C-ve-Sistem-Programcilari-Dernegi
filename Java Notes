@@ -242,6 +242,40 @@ Değişkenlere İlkdeğer Verilmesi
     b = 11; //İlk kez değer verme işlemi
 
 Değişkenlerin Faaliyet Alanları
+  Bildirilen bir değişkenin derleyici tarafından tanınabildiği, görülebildiği program aralığına faaliyet
+    alanı (scope) denir. Bir değişken yalnızca faaliyet alanı içerisinde kullanılabilir; yani değişkenin
+    ismi yalnızca o faaliyet alanında geçerlidir.
 
+Yerel Değişkenlerin Faaliyet Alanları
+  { ve } arasında kalan bölgelere blok denilmektedir. Bir metodun ana bloğu olmak zorundadır. O ana bloğun
+    içerisinde istenildiği kadar iç içe ya da ayrık bloklar oluşturulabilir. Bir yerel değişken
+    bildirildiği noktadan sonra ve bildirildiği bloğun sonuna kadarki bölgede faaliyet gösterir.
+  Java'da bir yerel değişkenin bildirildiği noktadan itibaren aynı faaliyet alanı içerisinde aynı isimde
+    başka bir yerel değişken bildirilemez. Ancak ayrık bloklarda aynı isimde değişken bildirimi yapılabilir.
+  Metot gövdeleri de aslında birer blok olduğundan, farklı metotlarda da aynı isimde değişkenler
+    bildirilebilir.
+  Java programlama dilinde değer atanmamış yerel değişkenlerin değerleri program içerisinde kullanılamaz.
+  
+Değişken İsimlendirme Kuralları
+  - Değişken isimleri sayısal karakterle başlatılamaz. Ancak alfabetik, _(alttire) ya da $ karakterleri
+      ile başlatılabilir. Bundan sonra nümerik karakterler olabilir.
+  - Değişkeen isimlendirmede UNICODE karakterler kullanılabilir. Yani isimler Türkçe karakterler
+      içerebilir.
+  - Java büyük harf küçük harf duyarlılığı olan (case sensetive) bir programlama dilidir. Yani büyük harfler
+      ve küçük harfler tamamen farklı karakterler olarak ele alınmaktadır.
+  - Değişken isimleriin anlamlı, telaffuz edilebilir çok uzun olmayacak biçimde seçilmesi tavsiye
+      edilmektedir. Bu bir sentaks kuralı değildir, ancak programın okunabilirliği ve anlaşılabilirliği
+      açısından önemlidir.
+  - Değişken isimlendirmede boşluk karakterleri de kullanılmaz.
+  - Değişken isimlerinde $ karakteri sentaks olarak kullanılabilmesine karşın tavsiye edilmez. Bazı
+      program kodunu kendisi yazan araçlar nadir de olsa $ karakterini kullanabilmektedir.
+  - Değişken isimleri doğrudan anahtar sözcüklerden oluşamaz. Java'nın versiyonlarında bu kurala ilişkin
+      bazı istisnalar bulunabilmektedir.
+  - Değişken isimlerinin maksimum uzunluğu hakkında Java standartlarında açıkça bir şey söylenmemiştir.
+      Yeterince uzun olabilmektedir.
+
+Klavyeden Değer Okunması
+  Java'da klavyeden değer okumak için birden fazla yöntem bulunmaktadır. Ancak burada basit olarak Scanner
+    sınıfı kullanılacaktır.
 
 
