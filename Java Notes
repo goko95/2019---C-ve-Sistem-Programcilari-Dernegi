@@ -194,7 +194,44 @@ char                         |  2               |  [0, +65 635]
     char türden bir değişkenin içerisine herhangi bir karakterin UNICODE tablosundaki sıra numarası
     yerleştirilebilir. UNICODE tablo dünyadaki neredeyse bütün dillerin karakterlerini ve pek çok özel
     karakteri ifade edebilme yeteneğine sahiptir. (www.unicode.org)
-- 
+- Yazılar aslında her bir karakteri bir sayı olacak biçimde bellekte kodlanmaktadır. Hangi sayının hangi
+    karakteri temsil ettiği bir tabloyla belirlenmektedir. ASCII tablosu 1 byte'lık yani 256 satırdan
+    oluşan bir tabloyken UNICODE 2 byte'lık yani 65 536 satırdan oluşan bir tablodur.
+Not: ASCII tablosunun ilk hali 7 bittir. Daha sonra 8 bitlik ASCII tablosu oluşturulmuştur.
+- Yalnızca ASCII ve UNICODE değil pek çok karakter tabloları ve kodlamaları vardır. Buna "character
+    encoding" denilmektedir. Bir yazı hangi tabloyla kodlanmışsa o tabloyla yorumlamak gerekir. Aksi halde
+    asıl yazıyla alakası olmayan bir yazı görüntülenebilir. Karakter kodlama (character encoding) konusu
+    ileride ele alınacaktır.
+- Java standarlarında boolean türünün uzunluğu belirtilmemiştir.
+- Java'da en çok kullanılan tamsayı türü int, en çok kullanılan gerçek sayı türü de double'dır.
+Not: Büyük ölçüde Java programlama dilinin özellikleri alınarak geliştirilmiş C# programlama dilinde
+       tamsayı türlerinin ayrıca işaretsiz versiyonları da bulunmaktadır.
+Not: C# programlama dilinde decimal isimli bir tür bulunmaktadır Bu tür doğal bir tür değildir.
+       Microişlemcilerin decimal türü ile işlemler yapabilecek komutları yoktur. Bu işlemler dolaylı
+       olarak yüzlerce komut ile yapılabilmektedir. Java'daki BigDecimal sınıfının karşılığı olarak C#'da
+       decimal türü kullanılmaktadır.
 
+Bildirim İşlemi
+  Kullanılmadan önce bir değişkenin derleyiciye tanıtılması işlemine bildirim (declaration) denir.
+    Değişkenler bildirilmeden kullanılamazlar.
+    
+  Bildirim işlminin genel biçimi şöyledir:
+    <tür> <değişken listesi>;
+  Aynı türden değişkenler aralarına "," (virgül) konularak bildirilebilirler.
+  
+  Java programlama dilinde değişken bildirimleri 3 yerde yapılabilir:
+    1- Metotların içerisinde: Metotların içerisinde bildirilen değişkenlere yerel değişkenler (local
+         variables) denilmektedir.
+    2- Metotların parametre parantezleri içerisinde: Bu tür değişkenlere parametre değişkenleri
+         denilmektedir.
+    3- Metotların dışında fakat sınıfların içerisinde: Bu tür değişkenlere "sınıfların veri elemanları"
+         denilmektedir.
+         
+Yerel bildirimler
+  Yerel değişkenler metodun içerisinde herhangi bir yerde bildirilebilirler.
+  Not: Bir değişkenin içerisindeki değerler print ve ğrintln metotlarıyla yazdırılabilirler.
+  
+Değişkenlere İlkdeğer Verilmesi
+  B
 
 
