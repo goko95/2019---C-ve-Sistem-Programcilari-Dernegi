@@ -373,8 +373,36 @@ Metotların Geri Dönüş Değerleri
          değerlerinin türü aslında yaratılacak olan geçici değişkenin türünü belirler.
 
 Metotların Parametre Değişkenleri
-  
-
+  Metotların parametre değişkenleri metotların girdileri olarak düşünülebilir. Metotların parametre
+    değişkenleri metot bildiriminde parametre parantezinin içerisinde belirtilir. Parametre değişkenleri
+    metot bildirimi sırasında tür ve değişken ismi virgül atomu ile ayrılacak şekilde yaıpılır.
+    Örnek:
+      public static void foo(int a, int b, double c)
+      {
+        //...
+      }
+    Not: Parametre değişkenleri aynı türden olsa bile tür belirten sözcük her bir parametre için yazılmak
+           durumundadır.
+    Not: Java programlama dilinde (hatta bir çok programlama dilinde) metot bildiriminde kullanılan
+           değişkenlere parametre, metodun çağrılması sırasında parantez içerisinde verilen ifadelere de
+           argüman denilmektedir.
+    Not: Paramettreli bir metot parametre sayısı kadar argümanla çağırılmak zorundadır. Argümanlar
+           herhangi bir ifade olabilir.
+           Örnek:
+           foo(10 + 8, 11 * 7, 10.32 - 6.23);
+    Not: Bir metoda argüman olarak başka bir metodun geri dönüş değeri verilebilir. Bu durumda önce
+           argüman olarak verile metot çağırılır, daha sonra metodun geri dönü değeri argüman olarak
+           aktarılır. Parametreli bir metot çağırıldığında önce argümanların değerleri hesaplanır. Sonra
+           argümanlardan parametre değişkenlerine otomatik atama yapılır. Yani metot çağırılması sırasında
+           verilen argümanlar da parametrelere yapılan atama işlemidir. Sonra da akış metoda geçer.
+    Not: Java programlama dilinde aşağıdaki durumlar aslında atama işlemleridir:
+           - Atama operatörü ile yapılan atamalar.
+           - Bir metodun geri dönüş değeri: Geçici değişkene yapılan atama
+           - Parametreli bir metodun çağırılması: Argümanlardan parametrelere yapılan atama
+    Not: Metotların parametre değişlenleri yalnızca o metot içerisinde kullanılabilir. Metotların parametre
+           değişkenleri adeta metodun ana bloğınun başına bildirilmiş yerel değişkenler gibidir.
+           Dolayısıyla metot içerisinde bir parametre değişkeni ile aynı isimli başka bir yerel değişken
+           bildirilemez.
 
 
 
