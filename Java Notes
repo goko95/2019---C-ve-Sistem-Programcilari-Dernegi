@@ -426,4 +426,63 @@ Matematiksel Metotlar
           negatifse -1, pozitifse 1 ve sıfırsa 0 değerini geri döner.
 
 
+                                           !!!Sabitler!!!
+
+Program içerisine doğrudan yazılan sayılara sabit denir. Yalnızca değişkenlerin değil sabitlerin de
+  türleri vardır. Bir sabitin türü niceliğine ve sonuna getirilen eklere bağlıdır. Sabitlere ilişkin
+  kurallar şöyledir:
+    1- Sayı nokta içermiyorsa ve sonuna herhangi bir ek almamışsa ve int türünün sınırları içerisinde
+         kalıyorsa sabit int türdendir. Sayı int türünün sınırları dışında kalırsa error oluşur.
+    2- Sayı nokta içermiyorsa ve sayının sonunda küçük veya büyük harf L varsa (L veya l), sabit long
+         türdendir. Sayı long türünün sınırları dışında kalırsa error oluşur.
+    3- Java programlama dilinde byte ve short türlerinden sabit yoktur. Ancak int türden bir sabit byte
+         veya short tünlerinin sınırları içerisinde kalıyorsa sırasıyla byte veya short türüne doğrudan
+         atanabilir.
+    4- Sayı nokta içeriyorsa ve sonunda ek yoksa sabit double türdendir.
+    5- Sayı nokta içersin ya da içermesin sonunda küçük veya büyül harf f varsa (F veya f) sabit float
+         türdendir.
+    6- Sayı nokta içersin ya da içermesin sonunda küçük harf ya da büyük harf d varsa (D veya d) sabit
+         double türdendir.
+    7- Tek tırnak içerisindeki karakterler char türden sabit belirtir. Tek tırnak içerisine yalnızca tek
+         bir karakter yerleştirilebilir.
+         Not: Tek tırnak içerisindeki karakterler aslında o karakterin UNICODE tablosundaki sıra numarasını
+                belirten sayılardır.
+         Not: Java programlama dilinde int türden bir sabit char türünün sınırları içerisinde kalıyorsa
+                char türden bir değişkene doğrudan atanabilir. Atanan bu sayı UNICODE tablosundaki sıra
+                numarası olarak ele alınır.
+
+Bazı karakterlerin görüntü karşılığı yoktur. Bunlar ekrana yazdırılmak istenirse bir olay gerçekleşir. Bu
+  tür karakterlere bastırılamayan (nonprintable-nongraphic) karakterler denilmektedir. Bastırılamayan
+  karakterlerin bazıları özel bir yöntemle belirtilmektedir. Bu karakterlere escape sequence denmektedir.
+  Tek tırnak içerisinde önce bir ters bölü sonra özel bazı karakterler bazı UNICODE karakterleri temsil
+  eder.
+  Java programlama dilide bu karakterlerin listesi şöyledir:
+    '\b' -> backspace
+    '\t' -> horizontal tab
+    '\n' -> line feed
+    '\f' -> form feed
+    '\r' -> carriage return
+    '\0' -> null character
+  Not: Ters bölü karakterinin kendisi '\\' biçiminde belirtilir. Tek tırnak karakterinin kendisi çift
+         tırnak içerisinde doğrudan kullanılabilir. Ancak karakter sabiti olarak '\'' biçiminde yazılmak
+         durumundadır.
+  Not: Çift tırnak karakterinin kendisi cift tırnak içerisinde doğrudan kullanılamaz. Çift tırnak karakteri
+         tırnak içerisinde \" biçiminde yazılmak durumundadır. Çift tırnak karakteri tek tırnak içerisinde
+         doğrudan kullanılabilir. Çift tırnak karakter sabiti ayrıca '\"' biçiminde de yazılabilir.
+         
+    8- boolean türden iki sabit vardır. Bunlar true ve false sabitleridir.
+
+Tam Sayıların Bazı Sayı Sistemlerde Yazılışı
+  Tam sayı sabitleri çeşitli sayı tabanlarında(sistemlerinde) yazılabilmektedir
+
+
+
+
+
+
+
+
+
+
+
 
