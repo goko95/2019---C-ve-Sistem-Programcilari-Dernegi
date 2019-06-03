@@ -473,7 +473,43 @@ Bazı karakterlerin görüntü karşılığı yoktur. Bunlar ekrana yazdırılma
     8- boolean türden iki sabit vardır. Bunlar true ve false sabitleridir.
 
 Tam Sayıların Bazı Sayı Sistemlerde Yazılışı
-  Tam sayı sabitleri çeşitli sayı tabanlarında(sistemlerinde) yazılabilmektedir
+  Tam sayı sabitleri çeşitli sayı tabanlarında(sistemlerinde) yazılabilmektedir:
+    - Onluk Sistem (Decimal): Doğrudan rakamlar (0, 1, ..., 9) kullanarak yazılan sabitler.
+    - Onaltılık Sistem (Hexadecimal): Sabit onaltılık yazılacaksa önce sabitin önüne 0x veya 0X yazılmak
+                                        durumundadır. Daha sonra 0 ve 9 arasındaki rakamlar ve A, B, C, D,
+                                        F karakterleri kullanılabilir. Bu karakterler küçük harf olarak
+                                        da yazılabilir.
+    - Sekizlik Sistem (Octal): Sabit sekizlik tabanda yazılacaksa önce sabitin önüne 0 yazılır daha sonra
+                                 0 ve 7 (7 dahil) arasındaki rakamlar kullanıılabilir.
+    - İkili Sistem (Binary): Bu şekilde yazılış Java 7'den itibaren Java programlama diline eklenmiştir.
+                               Sabit ikilil sistemde yazılacaksa önce sabitin önüne 0b veya 0B yazılmak
+                               durumundadır. Daha sonra 0 ve 1 rakamları kullanılabilir.
+
+Gerçek Sayı Sabitlerinin Üstel Gösterilişi
+  Gerçek sayı sabitleri bilimsel gösteriliş (scientific notation) diye de adlandırılan üstel biçimde de
+    yazılabilir. Bu yazım için küçük ya da büyük harf e kullanılır. E veya e den sonra gelen sayı 10
+    sayısının kuvvetini göstermektedir. Sabitin değeri E veya e den önce gelen sayı ve E veya e den
+    sonra gelen sayı ile 10 un kuvveti alınarak elde edilen sayının çarpımıdır.
+
+Karakter Sabitlerini \u İle Yazılması
+  Karakter sabitleri tek tırnak içerisinde \u ile UNICODE tablosundaki sıra numarası kullanılarak
+    yazılabilir.
+
+Sabitler Yazılırken _(alttire) Karakterinin Kullanımı
+  Java 7'den itibaren herhangi bir türden sabit içerisinde ve herhangi bir yazılışında _(alttire)
+    karakteri kullanılabilmektedir. Bu kullanım okunabilirliği arttırmak için dle eklenmiştir.
+  Aşağıda geçersiz durumlar belirtilmiştir, bu durumlar dışında sabitin herhangi bir yeride istenildiği
+    kadar kullanılabilir:
+      - Karakter sabitlerinde
+      - Sayının başında veya sonunda
+      - Sayı nokta içeriyorsa noktadan önce veya sonra
+      - Sayının sonuna eklenen tür belirten eklerden önce veya sonra
+      - Tam sayı sabitlerinin onluk sistem dışında yazılışlarında sayının sistemini belirten öneklerden
+          sonra veya önekler arasında veya öneklerin başında.
+      - Gerçek sayı sabitlerinin üstel yazılışşında E veya e den önce veya sonra
+      - Yazılan sabitin herhangi basamağı yazısal olarak elde edilecekse (Bu konu ileride ele alınacaktır)
+
+
 
 
 
