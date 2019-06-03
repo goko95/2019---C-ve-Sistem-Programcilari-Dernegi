@@ -316,6 +316,65 @@ Klavyeden Değer Okunması
   Değişkenlerin, sabitlerin ve operatörlerin herhangi bir kombinasyonuna ifade (expression) denir.
   Tek başına bir değişken ifade belirtir. Tekbaşına bir sabit de ifade belirtir; ancak tek başına bir
     operatör ifade belirtmez.
+
+
+                                          !!!Metotlar!!!
+
+Java programlama dilinde alt programlara metot denir. Bazı programlama dillerindeki fonksiyon veya
+  prosedür sözcüklerinin karşılığıdır. Bir metot bağımsız olarak çalıştırılabilen bir program parçasıdır.
+  Bir programı metotlara bölerek yazmak bazı faydalar sağlar:
+    - Programın kaynak kodu kücülür. Böylece çalışabilen programı temsil eden byte kod da küçülür.
+    - Kaynak kodun okunabilirliği ve anlaşılabilirliği artar.
+    - Belirli kod parçalarının programın farklı yerlerinde yinelenmesi, programda yapılacak olası bir
+        değişikliğin maliyetini azaltır. Ortak kod parçaları metotlar olarak yazıldığında yalnızca
+        metotlarda yapılan değişiklik yeterlidir.
+    - Programa hata arama daha kolay yapılır.
+    - Yazılan metotlar başka projelerde de kullanılabilir.
+  Not: Nesne yönelimli programlama tekniğinde genel olarak programlar sınıflara bölünür ve sınıflar
+         içerisindeki metotlarla yüksek seviyeli olarak geliştirilir.
+  Not: Java programlama dilinde bir metot içerisinde metot bildirimi yapılamaz.
+
+Metotların Geri Dönüş Değerleri
+  Bir metot çalıştırıldığı zaman onun kodu çalıtırılır. Metot sona erdiğinde ismie geri dönüş değeri
+    (return value) denilen bir değer elde edilir. Bu değer ifadelerde kullanılabilir. Metotların geri
+    dönüş değerlerinin türü metot bildirim işleminde metot isminin soluna yazılır. Metotların geri dönüş
+    değerleri return deyimiyle oluşşturulur.
+    Örnek:
+    public static int foo()
+    {
+      //...
+      return [bu örnek için int türden bir ifade];
+    }
+    
+  return deyiminin iki işlevi vardır:
+    1- Geri dönüş değerini oluşturur.
+    2- Metodu sonlandırır. Yani onun aşağısına yazacağımız kodlar çalıştırılmaz.
   
+  Not: Metodun geri dönüş değeri varsa kesinlikle return işlemi uygulanmak zorundadır. Ayrıca metodun her
+         mümkün akışında return anahtar sözcüğünün görülmesi gerekir.
+  Not: Geri dönüş değeri türünün yerine void anahtar sözcüğü yazılırsa bu durum metodun geri dönüş değeri
+         olamdığı anlamına gelir. Geri dönüş değeri olmayan metotlar geri dönüş değeri varmış gibi
+         kullanılamazlar.
+  Not: Void bir metotta return deyimi kullanılabilir. Bu bir zorunluluk değildir. void metotlarda return
+         deyimi kullanılırsa return deyiminin yanına ifade yazılamaz. Bu durumda return metodu
+         sonlandırmak için kullanılır. void metotlarda return kullaılmamışsa metot ana blok bittiğinde
+         biter.
+  Not: Bir metodun geri dönü değerinin olması onu kullanmayı zorunlu hale getirmez. Yani geri dönüş
+         değerleri programcı tarafından kullanılmayabilir.
+  Not: Metotların geri dönüş değerleri önce derleyici tarafından yaratılan bir geçici değişkene aktarılır.
+         Oradan alınarak kullanılır. İfade sonunda o geri dönüş değeri yok edilir.
+         Örnek:
+           a = foo() * 8;
+           ifadesinde aslında şunlar olmaktadır:
+             temp = return ifadesi;
+             a = temp * 8;
+             temp yok ediliyor.
+       Yani aslında return işlemi geçici değişkene yapılan bir atama işlemidir. Metotların geri dönüş
+         değerlerinin türü aslında yaratılacak olan geçici değişkenin türünü belirler.
+
+Metotların Parametre Değişkenleri
+  
+
+
 
 
