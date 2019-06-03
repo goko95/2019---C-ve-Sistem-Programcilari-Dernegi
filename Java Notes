@@ -404,5 +404,26 @@ Metotların Parametre Değişkenleri
            Dolayısıyla metot içerisinde bir parametre değişkeni ile aynı isimli başka bir yerel değişken
            bildirilemez.
 
+Matematiksel Metotlar
+  Java programlama dilinde java.lang paketi içerisinde bulunan Math sınıfında faydalı işlemler yapan
+    matematiksel metotlar bulunmaktadır. Bu metotların yazılması için belirli bir düzelde matematiksel
+    bilgi gerekir. Programcı bu detayları bilmek zorunda olmadan metotları çağırabilir. Çok kullanılan
+    bazı metodlar şunlardır:
+      - Math sınıfının sqrt metodu parametre olarak aldığı sayının karakökünü geri döner.
+      - Math sınıfının abs metodları parametre olarak aldığı sayının mutlak değerini geri döner.
+      - Math sınıfının sin, cos, tan, asin, acos, atan gibi metotları trigonometrik işlemleri yapar. Bu
+          metotlardaki parametre ya da geri dönüş değerleri radyan cinsindedir.
+      - Math sınıfında radyan değerini dereceye çeviren ve derece değerini radyana çeviren sırasıyla
+          toDegrees ve toRadians metotları vardır.
+      - Math sınıfının pow metodu kuvvet alma işlemi yapar.
+      - Math sınıfıın exp metodu parametre olarak aldığı değeri kuvvet kabul ederek e sayısının o kuvvetini
+          geri döner.
+      - Math sınıfının log, log10 ve loglp metotları sırasıyla e tabanına göre logaritma [ln(val)], 10
+          tabanına göre logaritma ve parametre olarak aldığı değerin 1 fazlasının e tabanına göre logaritma
+          değerini [ln(val + 1)] geri dönerler. Herhangi bir tabana göre logaritma işlemi için programcı bu
+          metotları kullanabilir.
+      - Math sınıfının signum metodu parametre olarak aldığı değeri işaretini belirleyen metottur. Sayı
+          negatifse -1, pozitifse 1 ve sıfırsa 0 değerini geri döner.
+
 
 
