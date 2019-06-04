@@ -510,6 +510,34 @@ Sabitler Yazılırken _(alttire) Karakterinin Kullanımı
       - Yazılan sabitin herhangi basamağı yazısal olarak elde edilecekse (Bu konu ileride ele alınacaktır)
 
 
+                                        !!!Temel Operatörler!!!
+
+Bir işleme yol açan ve işlem sonucunda bir değer üretilmesini sağlayan atomlara operatör denir. Operatörler
+  3 biçimde sınıflandırılabilir:
+    1- İşlevlerine göre sınıflandırma
+    2- Operand sayılarına göre sınıflandırma
+    3- Operatörün konumuna göre sınıflandırma
+    
+1- İşlevlerine göre sınıflandırma: Bu sunuflandırmada operatörün ne amaçla kullanıldığına bakılır. Buna
+                                     göre işlevlerine göre operatörleri aşağıdaki gibi gruplandırabiliriz:
+                                       - Aritmetik operatörler (arithmetic operators)
+                                       - Karşılaştırma operatörleri (comparison operators)
+                                       - Mantıksal operatörler (logical operators)
+                                       - Bitsel operatörler (bitwise operators)
+                                       - Özel amaçlı operatörler (special purpose operators)
+       
+2- Operand sayılarına göre sınıflandırma: Operatörle işleme sokulan ifadelere operand denir. Operand
+                                            sayılarına göre operatörleri aağıdaki gibi sınıflandırabiliriz:
+                                              - Tek operandlı operatörler (unary operators)
+                                              - İki operandlı operatörler (binary operators)
+                                              - Üç operandlı operatörler (ternary operators)
+
+3- Operatörün konumuna göre sınıflandırma: Bu sınıflandırmada operatörün operandlarının neresinde olduğuna
+                                             bakılır. Üç şekilde gruplandırılabilir:
+                                               - Önek operatörler (prefix operators)
+                                               - Araek operatörler (infix operators)
+                                               - Sonek operatörler (postfix operators)
+
 
 
 
