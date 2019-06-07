@@ -538,7 +538,17 @@ Bir işleme yol açan ve işlem sonucunda bir değer üretilmesini sağlayan ato
                                                - Araek operatörler (infix operators)
                                                - Sonek operatörler (postfix operators)
 
-Operatörlerin teknik ol
+Operatörlerin teknik olarak tanımlanabilmesi için bu üç sınıflandırmada nereye düştüğü belirtilmek
+  durumundadır. Bundan sonra operatöre ilişkin ilave bazı özellikler belirtilmek durumundadır. Örneğin
+  "! operatörü tek operandlı önek durumunda mantıksal bir operatördür. Ayrıca bu operatörün operandı
+  boolean türden bir ifade olmak durumundadır ve ürettiği değer de boolean türdendir" gibi...
+
+Farklı işlevleri olan operatörlere ilikin atomlar ayı olabilmektedir. Örneğin + karakteri hem toplama
+  operatörü hem de işaret operatörü olarak kullanılmaktadır.
+  
+Operatörler Arasındaki Öncelik İlişkisi
+  Her operatörün diğerine göre bir öncelik durumu (precedence) vardır. Operatörlerin bazıları eşit
+    öncelikte olabilirler. İşlemler genel olarak öncelik sırasına göre yapılır.
 
 
 
