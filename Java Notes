@@ -549,6 +549,62 @@ Farklı işlevleri olan operatörlere ilikin atomlar ayı olabilmektedir. Örne�
 Operatörler Arasındaki Öncelik İlişkisi
   Her operatörün diğerine göre bir öncelik durumu (precedence) vardır. Operatörlerin bazıları eşit
     öncelikte olabilirler. İşlemler genel olarak öncelik sırasına göre yapılır.
+    Örneğin:
+      "i" yapılan işlemi temsil etmek üzere;
+        a = b + c * d;
+      işleminin yapılışı
+        i1: c * d
+        i2: b + i1
+        i3: a = i2
+      şeklindedir.
+      
+    "()" parantezler kullanılarak önceliklendirme sağlanabilir.
+    Örneğin:
+        a = (b + c) * d;
+      işlemi
+        i1: b + c
+        i2: i1 * d
+        i3: a = i2
+      şeklinde yapılır.
+
+  Operatörler arasındaki öncelik ilişkisi operatör öncelik tablosu denilen bir tabloyla betimlernir.
+  Örneğin:
+    Operatör  İlişkisi
+    ()        Soldan sağa
+    * /       Soldan sağa
+    + -       Soldan sağa
+    =         Sağdan sola
+    
+    Öncelik tablosunda yukarıdaki satırlar aşağıdaki satırlara göre yüksek önceliklidir. Aynı satırdakiler
+      eşit önceliklidir. Eşit öncelikli operatörler ifade içerisindeki konumlarına göre solda sağa (left
+      associative) ya da sağdan sola (right associative) öncelikli olarak yapılırlar.
+      
+*, /, + ve - Operatörleri
+  Bu operatörler iki operandı araek durumunda aritmetik operatörlerdir. Matematikteki klasik 4 işlemi
+    yaparlar.
+
+% Operatörü
+  Bu operatöre "mod operatörü" de denmektedir. Operatör sol taraftaki operandın sağ taraftaki operanda
+    bölümünden elde edilen kalan değerini üretir.
+
+İşaret + ve İşaret - Operatörleri
+  İşaret + ve işaret - operatörleri tek operandlı önek durumunda aritmetik operatörlerdir. İşaret -
+    operatörü operandının negatif değerini üretir.
+    
+++ ve -- Operatörleri
+  ++ operatörüne artırma (increment), -- operatörüne eksiltme (decrement) operatörü denir. Bu operatörler
+    tek operandlı önek ve sonek olarak kullanılabilen aritmetik operatörlerdir. ++ operatörü operandın
+    değerini 1 artırır, -- operatörü operandın değerini 1 eksiltir.
+  Bu operatörlerin önek ve sonek kullanımları farklıdır. Bu operatörlerin hem önek hem de sonek
+    kullanımları aynı öncelikte yapılır. Ancak önek kullanımda sonraki işleme değişkenin artırılmış ya da
+    eksiltilmiş değeri sokulurken, sonek kullanımda değişkenin artırılmamış ya da eksiltilmemiş değeri
+    sokulur.
+  ++ ve -- operatörlerinin operandları değişken olmak durumundadır.
+    Örneğin:
+        b = 8++; //error
+      ifadesinde ++ operatörünün operandı sabit olduğundan ifade geçersizdir.
+  Not:
+      
 
 
 
