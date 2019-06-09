@@ -603,8 +603,48 @@ Operatörler Arasındaki Öncelik İlişkisi
     Örneğin:
         b = 8++; //error
       ifadesinde ++ operatörünün operandı sabit olduğundan ifade geçersizdir.
-  Not:
-      
+  Not: C/C++ dillerinde ++ ve -- operatörleri ile bu operatörlerin operandlarının aynı ifadede bulunması
+         tanımsız davranışa (undefined behaviour) yol açmaktadır. Java'da herhanggi bir sorun
+         bulunmamaktadır. Derleyicinin tanımsız davranışı C/C++ standartlarina göre kısaca ne olacağı
+         belli olmayan durumlar için kullanılmaktadır. Yani bu dillerde "programcı tanımsız davranışa yol
+         açacak kodlardan kaçınmak durumundadır" anlamına gelmektedir. Java'da tanımsız davranışa yol açacak
+         hiçbir durum yoktur. Yani Java'da bir ifade ya geçerli ya da geçersiz (error) olmaktadır.
+  "Bilindiği gibi Java'da atomlar arasında istenildiği kadar boşluk bırakılabilir. Atomlar istenildiği
+    kadar bitişik yazılabilir. Anahtar sözcükler ve değişkenler bitişik yazılamaz" kuralları geçerlidir.
+    Peki aşağıdaki gibi bir ifadeyi derleyici nasıl algılayacaktır?
+      a = b+++c;
+  Yani derleyici bu ifade için, "a = b + ++c;" biçiminde mi yoksa "a = b++ + c;" biçiminde mi işlem
+    yapacaktır? Burada derleyici derleme sırasında anlamlı en uzun ifadeyi seçer. Yani "a = b++ + c;"
+    biçiminde işlem yapılacaktır.
+
+Karşılaştırma Operatörleri
+  Toplam 6 adet karşılaştırma operatörü vardır. Bu operatörler iki operandlı araek durumunda
+    operatörlerdir. Karşılaştırma operatörleri boolean türden değer üretirler.
+  == operatörü eşitlik karşılaştırması yapar. Operandlar birbirine eşits true değilse false değerlerini
+    üretirler. Benzer şekilde != operatörü operandlarının eşitsizliği durumunda true eşitsizliği durumunda
+    false değerlerini üretir. Yani bu iki operatör birbirlerinin mantıksal olarak tersleridir.
+  Benzer şekilde < operatörünün mantıksal tersi >= operatörü ve > operatörünün mantıksal tersi de <=
+    operatörüdür.
+
+Mantıksal Operatörler
+  Java'da 3 adet mantıksal operatör vardır. Bunlar:
+    &&  -> mantıksal ve (logical AND)
+    ||  -> mantıksal veya (logical OR)
+    !   -> mantıksal değil (logical NOT)
+    operatörleridir.
+  && ve || operatörleri iki operandlı araek durumunda, ! operatörü tek operandlı önek durumunda
+    operatörlerdir. Mantıksal operatörlerin operandları boolean türden olmak zorundadır. Ürettikleri
+    değerler de boolean türdendir. Ürettikleri değerler şöyledir:
+           && ve || Operatörleri
+        A      B     A && B    A || B
+      True   False    True      True
+      True   False   False      True
+      False   True   False      True
+      False  False   False     False
+              ! Operatörü
+                A     !A
+              True   False
+              False   True
 
 
 
