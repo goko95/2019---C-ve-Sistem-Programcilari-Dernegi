@@ -657,6 +657,13 @@ Mantıksal Operatörler
     yapılmaz, || operatörünün sol tarafı true ise sağ tarafı hiç yapılmaz.
   Kısa devre özelliği farklı bir sonucun çıkmasına yol açmaz. Öncelik tablosu tam olarak uygulanırsa
     çıkacak sonuç aynıdır. Kısa devre özelliği ile bu sonuç daha hızlı elde edilir.
+  Bu operatörler sayının karşılıklı bitlerini AND ve OR işlemlerine sokarlar. Bu operatörlerin Java'da
+    asıl kullanımları bit işlemleri olmasına karşın boolean türden operandlarla da işleme sokulabilir. &
+    | operatörlerinin kısa devre özelliği yoktur. Bu sebeple boolean türden operandlar ile kısa devre
+    özelliği olmayan mantıksal AND ve OR operatörleri gibi de kullanılabilirler.
+  ! operatörü tek operandlı önek durumunda bir operatördür. ! operatörünün operandı boolean türden olmak
+    zorundadır. Bu operatör operandının mantıksal olarak tersini üretir. Yani operandının değeri true ise
+    false, false ise true değerini üretir.
 
 
 
