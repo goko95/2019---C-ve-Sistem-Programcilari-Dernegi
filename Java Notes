@@ -645,6 +645,20 @@ Mantıksal Operatörler
                 A     !A
               True   False
               False   True
+  && ve || operatörlerinin kısa devre (short circuit) özellikleri vardır. Bu operatörler klasik öncelik
+    kurallarına uymazlar. Bu operatörlerin sağ tarafında ne olursa olsun önce sol tarafındaki ifade
+    yapılır ve bitirilir. Duruma göre sağ tarafındaki ifade yapılı. "Mantıksal AND" ve "mantıksal OR"
+    işlemleri kısaca şöyle tanımlanabilir.
+      Mantıksal AND: İfadelerden her ikisi birden true ise sonuç true, diğer bütün durumlarda false.
+      Mantıksal OR: İfadelerden her ikisi birden false ise işlem false, diğer bütün durumlarda true.
+    Bu tanımlara göre, && öperatörü için sol tarafındaki ifade false ise sağ tarafı ne olsun sonucu
+    etkilemeyecektir. Benzer şekilde || operatörü için de sol tarafındaki ifade true ise sağ tarafı
+    ne olursa olsun sonuç değişmez. Bu sebeple && operatörünün sol tarafı false ise sağ tarafı hiç
+    yapılmaz, || operatörünün sol tarafı true ise sağ tarafı hiç yapılmaz.
+  Kısa devre özelliği farklı bir sonucun çıkmasına yol açmaz. Öncelik tablosu tam olarak uygulanırsa
+    çıkacak sonuç aynıdır. Kısa devre özelliği ile bu sonuç daha hızlı elde edilir.
+
+
 
 
 
